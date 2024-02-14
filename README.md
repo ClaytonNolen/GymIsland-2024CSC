@@ -12,6 +12,11 @@ START UP:
 
         npm i webpack webpack-cli -D
 
+    After the previous two have been installed you should have a folder titled "node_modules". This folder needs to be ignored
+    and will require the use of .gitignore. If you do not do this step and continue you will remove packages when installing new npm
+    commands. To conitnue please make sure that the gitignore file is updated to the latest version. For any issues check out this site
+    then ask questions, https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files.
+
         npm install firebase
 
 
