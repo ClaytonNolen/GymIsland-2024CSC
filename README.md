@@ -1,37 +1,38 @@
-# GymIsland-2024CSC
+# create-svelte
 
-START UP:
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    !!! IMPORTANT: BEFORE CONTINUING MAKE SURE YOUR VS & GIT REPO IS UP TO DATE !!!
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Creating a project
 
-    Please commit these prompts into your terminal:
-        
-        npm init -y
+If you're seeing this, you've probably already done this step. Congrats!
 
-        npm i webpack webpack-cli -D
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-    After the previous two have been installed you should have a folder titled "node_modules". This folder needs to be ignored
-    and will require the use of .gitignore. If you do not do this step and continue you will remove packages when installing new npm
-    commands. To conitnue please make sure that the gitignore file is updated to the latest version. For any issues check out this site
-    then ask questions, https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files.
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-        npm install firebase
+## Developing
 
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-DOWNLOADS:
-    Node.js - https://nodejs.org/en/download/current
+```bash
+npm run dev
 
-Extensions:
-    Live Server - The icon is purple.
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-FILES:
-    package.json - Node.js download needed. Keeps track of all our different dependencies (ex: webpack for our DB).
+## Building
 
-HONORCODE:
-    Tutorial on Webpack: https://www.youtube.com/watch?v=vK2NoOoqyRo&list=PL4cUxeGkcC9jERUGvbudErNCeSZHWUVlb&index=2
-        Files: bundle.js, index.html, node_modules, index.js, package-lock.json, package.json, webpack.config.js
+To create a production version of your app:
 
-    Tutorial on Firebase: https://www.youtube.com/watch?v=2yNyiW_41H8&list=PL4cUxeGkcC9jERUGvbudErNCeSZHWUVlb&index=4
-        Files: index.js
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
