@@ -1,6 +1,6 @@
 // All future JS code should at least start here. 
 
-// console.log('DEBUG: WEBPACK CONNECTION TEST')
+//console.log('DEBUG: WEBPACK CONNECTION TEST')
 
 import { initializeApp } from 'firebase/app'
 
@@ -16,3 +16,5 @@ const firebaseConfig = {
   };
 
   initializeApp(firebaseConfig)
+
+  // Begin coding here, do not alter anything from above.
