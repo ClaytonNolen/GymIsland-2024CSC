@@ -3,6 +3,9 @@
 //console.log('DEBUG: WEBPACK CONNECTION TEST')
 
 import { initializeApp } from 'firebase/app'
+import {
+  getFirestore
+} from 'firebase/firestore'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -15,6 +18,11 @@ const firebaseConfig = {
     measurementId: "G-7W95J7T3NX"
   };
 
+  // Intialized Firebase App.
   initializeApp(firebaseConfig)
 
-  // Begin coding here, do not alter anything from above.
+  // Initalized Services.
+  const db = getFirestore()
+  // Collection Ref.
+
+  // Get Collection Data.
