@@ -4,7 +4,9 @@
 
 import { initializeApp } from 'firebase/app'
 import {
-  getFirestore
+  getFirestore,
+  collection,
+  getDocs
 } from 'firebase/firestore'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,11 +20,24 @@ const firebaseConfig = {
     measurementId: "G-7W95J7T3NX"
   };
 
-  // Intialized Firebase App.
-  initializeApp(firebaseConfig)
+// Intialized Firebase App.https://i.pinimg.com/736x/02/ae/9b/02ae9b610cb81b4abf32d10fb314358e.jpg
+initializeApp(firebaseConfig)
 
-  // Initalized Services.
-  const db = getFirestore()
-  // Collection Ref.
+// Initalized Services.
+const db = getFirestore()
 
-  // Get Collection Data.
+// Collection Ref.
+const collectionRef = collection(db, 'x')
+
+// Get Collection Data.
+getDocs(collectionRef)
+  .then((snapshot) => {
+    let test = []
+    snapshot.docs.forEach((doc) => {
+      test.push({ ...doc.data(), id: doc.id})
+    })
+    console.log(test)
+  })
+  .catch(err => {
+    console.log(err.message)
+})
