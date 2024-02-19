@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
+// Switched to the Node adapter from the link below
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
