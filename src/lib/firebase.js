@@ -7,6 +7,8 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+console.log('DEBUG: CONNECTION TEST')
+
 // Connected to the env file so that vite can be incorporated with the different Firebase project identifiers
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
