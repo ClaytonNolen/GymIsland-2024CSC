@@ -8,7 +8,7 @@
 
     <form>
         <div>
-            <label for="email">Southwestern University Email</label>
+            <label for="email">SU Email</label>
             <input
                 type="text"
                 id="email"
@@ -34,10 +34,16 @@
     section {
         text-align: center;
     }
-
     form {
-      display: flex;
-      flex-direction: column;
-      width: 300px;
+        display: inline-block;
+        width: 300px;
+    }
+
+    :global(input[type='text']) {
+        margin-bottom: 1em;
+    }
+
+    :global(input[type='password']) {
+        margin-bottom: 1em;
     }
 </style>
