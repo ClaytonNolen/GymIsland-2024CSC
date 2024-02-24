@@ -3,9 +3,10 @@
 </script>
 
 <section>
-    
+    <!--Page header-->
     <h1>Log-in</h1>
 
+    <!--Form for logging in. Values are left empty until user input.-->
     <form>
         <div>
             <label for="email">SU Email</label>
@@ -14,6 +15,7 @@
                 id="email"
                 name="email"
                 value=""
+                required
             />
         </div>
         <div>
@@ -23,6 +25,7 @@
                 id="password"
                 name="password"
                 value=""
+                required
             />
         </div>
         <button type="submit">Log-in</button>
@@ -30,6 +33,8 @@
 
 </section>
 
+<!--All text on page is alligned center. Form is inline-block, meaning input fields are displayed vertically. A 1em margin
+    is added to the bottom of each input field-->
 <style>
     section {
         text-align: center;

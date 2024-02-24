@@ -1,5 +1,13 @@
 <script>
-	
+	import Tabs from './shared/tabs.svelte';
+	import LogIn from './Log-in/+page.svelte';
+	import SignUp from './Sign-up/+page.svelte';
+	// Tabs
+	let items = ['Home', 'Log-In', 'Sign-Up'];
+	let activeItem = 'Home';
+	const tabChange = (e) => {
+		activeItem = e.detail;
+	}
 </script>
 
 <svelte:head>
@@ -8,19 +16,22 @@
 </svelte:head>
 
 <h1>
+	<!--Page header-->
 	Gym Island
 </h1>
 
-<section>
-	<a href="/Log-in">
-		Log-in
-	</a>
-	or
-	<a href="/Sign-up">
-		Sign-up
-	</a>
-</section>
+<main>
+	<Tabs {activeItem} {items} on:tabChange={tabChange} />
+	{#if activeItem === 'Home'}
+		Home
+	{:else if activeItem === 'Log-In'}
+		<LogIn />
+	{:else if activeItem === 'Sign-Up'}
+		<SignUp />
+	{/if}
+</main>
 
+<!--All content on page is aligned center-->
 <style>
 	h1 {
 		text-align: center;
