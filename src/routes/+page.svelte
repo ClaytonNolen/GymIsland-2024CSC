@@ -2,11 +2,24 @@
 	import Tabs from './shared/tabs.svelte';
 	import LogIn from './Log-in/+page.svelte';
 	import SignUp from './Sign-up/+page.svelte';
-	// Tabs
+	import user from './user';
+
+	// Tabs with the following labels
 	let items = ['Home', 'Log-In', 'Sign-Up'];
+	// default tab is Home
 	let activeItem = 'Home';
+	// tabChange = the event from tabs.svelte
 	const tabChange = (e) => {
+		// set activeItem to tab that was clicked
 		activeItem = e.detail;
+	}
+
+	// toggle for whether a user is logged in or not
+	$: isLoggedIn = $user === null? false : true;
+
+	// Used for loggin a user out
+	const logout = ()=>{
+		user.update(val => val = null);
 	}
 </script>
 
@@ -21,12 +34,18 @@
 </h1>
 
 <main>
+	<!--Display content from tabs.svelte-->
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
+	<!--if tab clicked = Home-->
 	{#if activeItem === 'Home'}
 		Home
+	<!--if tab clicked = Log-In-->
 	{:else if activeItem === 'Log-In'}
+		<!--Display contents from Log-In page-->
 		<LogIn />
+	<!--if tab clicked = Sign-Up-->
 	{:else if activeItem === 'Sign-Up'}
+		<!--Display content from Sign-Up page-->
 		<SignUp />
 	{/if}
 </main>
@@ -36,15 +55,6 @@
 	h1 {
 		text-align: center;
 		font-size: 4em;
-	}
-	section {
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-		font-size: 2em;
 	}
 
 </style>
