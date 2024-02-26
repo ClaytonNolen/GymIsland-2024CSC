@@ -1,5 +1,32 @@
 <script>
-   
+   import user from '../user';
+
+   let username = '';
+   let password = '';
+   let currentError = '';
+
+   const login = () => {
+    fetch('TODO: URL of database', {
+        method: 'post',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({username:username, password:password})
+    })
+    .then((res)=> {
+        if(res.status < 299) return res.json()
+        if(res.status > 299) currentError = 'Server Error';
+    })
+    .then((data) => {
+        // @ts-ignore
+        if(data) user.update (val => val = {...data})
+    })
+    // @ts-ignore
+    .catch((error) => {
+        currentError = error;
+        console.log("Error Logging In: ", error)
+    })
+   }
 </script>
 
 <section>

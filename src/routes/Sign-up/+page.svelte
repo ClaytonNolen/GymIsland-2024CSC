@@ -1,5 +1,5 @@
 <script>
-    
+    import user from '../user'
 </script>
 
 <section>
